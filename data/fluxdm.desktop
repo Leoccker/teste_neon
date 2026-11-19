@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=FluxDM
+GenericName=Download Manager
+GenericName[pt_BR]=Gerenciador de Downloads
+Comment=Fast and modern download manager for Linux
+Comment[pt_BR]=Gerenciador de downloads rápido e moderno para Linux
+Exec=fluxdm gui %U
+Icon=fluxdm
+Terminal=false
+Categories=Network;FileTransfer;GTK;
+Keywords=download;manager;accelerator;http;https;gerenciador;downloads;
+StartupNotify=true
+StartupWMClass=io.github.fluxdm

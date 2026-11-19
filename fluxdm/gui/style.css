@@ -1,0 +1,234 @@
+/* FluxDM — Tema GTK4 / Libadwaita adaptativo (claro e escuro) */
+
+/* Sidebar */
+.sidebar-list {
+    background-color: transparent;
+    padding: 6px;
+}
+
+.sidebar-list row {
+    border-radius: 8px;
+    margin: 2px 0;
+    padding: 4px 6px;
+}
+
+.sidebar-badge {
+    font-size: 0.78em;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background-color: alpha(currentColor, 0.12);
+    min-width: 22px;
+}
+
+.sidebar-badge.active-badge {
+    background-color: alpha(@accent_bg_color, 0.22);
+    color: @accent_color;
+}
+
+/* Lista principal de downloads */
+.download-list {
+    background-color: transparent;
+    padding: 12px 16px 24px 16px;
+}
+
+.download-list > row {
+    background-color: @card_bg_color;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 0;
+    box-shadow: 0 1px 2px alpha(black, 0.08);
+    border: 1px solid alpha(currentColor, 0.08);
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.download-list > row:hover {
+    border-color: alpha(@accent_bg_color, 0.35);
+}
+
+.download-list > row:selected {
+    background-color: @card_bg_color;
+    border-color: alpha(@accent_bg_color, 0.65);
+}
+
+.download-row-box {
+    padding: 14px 16px;
+}
+
+/* Ícone do arquivo */
+.file-icon-box {
+    background-color: alpha(@accent_bg_color, 0.12);
+    color: @accent_color;
+    border-radius: 10px;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.file-icon-box.completed {
+    background-color: alpha(@success_color, 0.14);
+    color: @success_color;
+}
+
+.file-icon-box.error {
+    background-color: alpha(@error_color, 0.14);
+    color: @error_color;
+}
+
+.file-icon-box.paused {
+    background-color: alpha(@warning_color, 0.14);
+    color: @warning_color;
+}
+
+/* Título e subtítulo da linha */
+.download-filename {
+    font-weight: 700;
+    font-size: 1.02em;
+}
+
+.download-path {
+    font-size: 0.84em;
+    opacity: 0.68;
+}
+
+/* Badges de status */
+.status-pill {
+    font-size: 0.76em;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+}
+
+.status-downloading {
+    background-color: alpha(@accent_bg_color, 0.18);
+    color: @accent_color;
+}
+
+.status-queued {
+    background-color: alpha(currentColor, 0.10);
+    color: inherit;
+    opacity: 0.82;
+}
+
+.status-paused {
+    background-color: alpha(@warning_color, 0.18);
+    color: @warning_color;
+}
+
+.status-completed {
+    background-color: alpha(@success_color, 0.18);
+    color: @success_color;
+}
+
+.status-error {
+    background-color: alpha(@error_color, 0.18);
+    color: @error_color;
+}
+
+.status-cancelled {
+    background-color: alpha(currentColor, 0.10);
+    opacity: 0.65;
+}
+
+/* Barra de progresso */
+.download-progress trough {
+    min-height: 7px;
+    border-radius: 999px;
+    background-color: alpha(currentColor, 0.10);
+}
+
+.download-progress progress {
+    min-height: 7px;
+    border-radius: 999px;
+}
+
+.download-progress.completed progress {
+    background-color: @success_color;
+}
+
+.download-progress.paused progress {
+    background-color: @warning_color;
+}
+
+.download-progress.error progress {
+    background-color: @error_color;
+}
+
+.segment-progress trough {
+    min-height: 5px;
+    border-radius: 999px;
+    background-color: alpha(currentColor, 0.10);
+}
+
+.segment-progress progress {
+    min-height: 5px;
+    border-radius: 999px;
+}
+
+/* Estatísticas monoespaçadas */
+.mono-stats {
+    font-family: monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.85em;
+    opacity: 0.82;
+}
+
+.mono-percent {
+    font-family: monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.85em;
+    font-weight: 700;
+    min-width: 46px;
+}
+
+.error-text {
+    color: @error_color;
+    font-size: 0.85em;
+}
+
+/* Barra de status inferior */
+.status-bar {
+    padding: 7px 16px;
+    border-top: 1px solid alpha(currentColor, 0.10);
+    background-color: @headerbar_bg_color;
+    font-size: 0.84em;
+}
+
+.status-bar-metric {
+    font-variant-numeric: tabular-nums;
+}
+
+.speed-limit-chip {
+    background-color: alpha(@warning_color, 0.16);
+    color: @warning_color;
+    border-radius: 999px;
+    padding: 1px 8px;
+    font-size: 0.82em;
+    font-weight: 600;
+}
+
+/* Feedback visual ao arrastar URL sobre a janela */
+.drop-highlight {
+    outline: 2px dashed @accent_bg_color;
+    outline-offset: -6px;
+    background-color: alpha(@accent_bg_color, 0.06);
+}
+
+/* Diálogo de detalhes e análise */
+.mono-value {
+    font-family: monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.88em;
+}
+
+.probe-banner {
+    background-color: alpha(@accent_bg_color, 0.10);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.probe-banner.error {
+    background-color: alpha(@error_color, 0.12);
+    color: @error_color;
+}

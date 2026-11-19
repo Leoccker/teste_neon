@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Launcher script for FluxDM (CLI & GTK4 GUI)."""
+
+from __future__ import annotations
+
+import os
+import sys
+from pathlib import Path
+
+
+def _ensure_app_on_path() -> None:
+    script_path = Path(__file__).resolve()
+    candidates = [
+        script_path.parent.parent,
+        script_path.parent,
+        Path(os.environ.get("XDG_DATA_HOME") or (Path.home() / ".local" / "share"))
+        / "fluxdm"
+        / "app",
+    ]
+    for candidate in candidates:
+        if (candidate / "fluxdm").is_dir():
+            resolved = str(candidate)
+            if resolved not in sys.path:
+                sys.path.insert(0, resolved)
+            return
+
+
+def main() -> int:
+    _ensure_app_on_path()
+    from fluxdm.__main__ import main as fluxdm_main
+
+    return fluxdm_main()
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
